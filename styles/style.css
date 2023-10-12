@@ -1,0 +1,210 @@
+/*Overall Styling*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*1--> Style the header */
+.header {
+  grid-area: header;
+  background-color: #f1f1f1;
+  padding: 5px;
+  text-align: center;
+  font-size: 15px;
+}
+
+/*2-->Style the navigation*/
+.navigation{
+    grid-area:navigation;
+}
+.navigation ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+.navigation li {
+  float: left;
+}
+
+.navigation li a,.navigation .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navigaion li a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(119, 113, 115);
+}
+
+.navigation li.dropdown {
+  display: inline-block;
+}
+
+.navigation .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.navigation .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.navigation .dropdown-content a:hover {background-color: #f1f1f1;}
+
+.navigation .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/*End of navigation*/
+
+/*0-->Containers*/
+/* The grid container */
+.main_container {
+  display: grid;
+  grid-template-areas: 
+    'header header header header header header' 
+    'navigation navigation navigation navigation navigation navigation'
+    'quicklinks main_content main_content main_content main_content side_content'
+    'quicklinks main_content main_content main_content main_content side_content'
+    'quicklinks main_content main_content main_content main_content side_content' 
+    'footer footer footer footer footer footer';
+    grid-gap:1px;
+  /* grid-column-gap: 10px; - if you want gap between the columns */
+} 
+/*1-->header container*/
+.header{
+    display:grid;
+    grid-template-areas: 
+    'logo logo logo logo logo webhead';
+    grid-gap:1px;
+}
+.logo{
+  grid-area: logo;
+  /*display:flex;*/
+  /*justify-content: center;
+  align-items: center;*/
+  overflow:hidden;
+}
+.logo img{
+ /* flex-shrink:0;
+  min-width:20%;
+  min-height:20%;*/
+  height:175px;
+  width:100%;
+}
+.website_heading{grid-area:webhead;font-weight: bolder;background-color: #a34a28;color:white;}
+/*
+.left,
+.middle,
+.right {
+  padding: 10px;
+  height: 300px; 
+}*/
+/*3-->Start of left side content*/
+
+/* Style the quicklinks column */
+.quicklinks {
+  grid-area: quicklinks;
+  padding:10px;
+  background-color: #ac8daf;
+  color:white;
+  width:auto;
+}
+.quicklinks a{
+    color:white;
+}
+/*End of left side content*/
+
+/*4-->Start of main content*/
+
+/* Style the main column */
+.main_content {
+  grid-area: main_content; 
+}
+
+/*End of Main Content*/
+
+/*5-->Start of Right Content*/
+
+/* Style the right column */
+.side_content {
+  grid-area: side_content;
+}
+.side_content a{
+  color:white;
+}
+.side_content{
+  width:auto;
+  background-color: #ac8daf;
+}
+.side_content form{
+  border-radius: 5px;
+  padding: 10px;
+  /*color:white;*/
+  font-weight: bolder; 
+  width: auto;
+}
+.login form legend{
+  color:white;
+}
+.login form input[type=text],.login form input[type=password]{
+  padding:5px;
+  width:100%;
+  background-color: white;
+  color:black;
+  font-weight: bolder;
+  border-radius:150px;
+}
+.login form input[type=submit],.login form input[type="reset"]{
+  background-color: #e7e7e7; color: black;
+  padding: 10px 24px;
+  border-radius: 4px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+/*End of right content*/
+
+
+/*6-->start of footer*/
+
+/* Style the footer */
+.footer {
+  grid-area: footer;
+  background-color: black;
+  padding: 10px;
+  text-align: center;
+}
+.About{
+  color:white;
+  font-weight: bolder;
+}
+/*end of footer*/
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .grid-container  {
+    grid-template-areas: 
+    'header header header header header header' 
+    'navigation navigation navigation navigation navigation navigation'
+    'quicklinks quicklinks quicklinks quicklinks quicklinks side_content'
+    'side_content side_content side_content side_content side_content side_content'
+    'main_content main_content main_content main_content main_content main_content'
+    'main_content main_content main_content main_content main_content side_main_content' 
+    'main_content main_content main_content main_content main_content side_main_content'
+    'footer footer footer footer footer footer';
+  }
+}

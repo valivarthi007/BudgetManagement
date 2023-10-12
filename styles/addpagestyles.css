@@ -1,0 +1,43 @@
+#TSDiv,#ESTBDiv,#OTCDiv{
+            display:none;
+        }
+        #OTCLab,#OTCBok,#OTCCont,#LBA,#OFS,#JA,#AC,#PG,#GF{
+            display:none;
+        }
+        .main_content{
+            background-color:#484c7f;
+            padding:20px;
+            color:white;
+        }
+        input[type=text],input[type=number],select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+          }
+        input[type=submit],input[type=reset] {
+            background-color: white;
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+        }
+        input[type=submit]:hover,input[type=reset]:hover{
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+        input[type=file]{
+            width:100%;
+            padding:20px;
+            background-color:rgb(105, 100, 100);
+        }
+        

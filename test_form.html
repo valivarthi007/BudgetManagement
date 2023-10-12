@@ -1,0 +1,194 @@
+<html>
+<head>
+    <style>
+        #TS,#ESTB,#OTC{
+        display:none;
+    }
+    #OTCLab,#OTCBok,#OTCCont,#LBA,#OFS,#JA,#AC,#PG,#GF{
+        display:none;
+    }
+    </style>
+    <script>
+        function showCat(){
+                var s = document.getElementById("Category");
+                var t = s.value;
+                for(i=1;i<s.length;i++){
+                    if(s.options[i].value==t){
+                        document.getElementById(s.options[i].value).style.display="block";
+                    }
+                    else{
+                        document.getElementById(s.options[i].value).style.display="none";
+                    }
+                }
+            }
+            function showTS(){
+  var s = document.getElementById("TStaff");
+    var t = s.value;
+    for(i=1;i<s.length;i++){
+      if(s.options[i].value==t){
+          document.getElementById(s.options[i].value).style.display="block";
+      }
+      else{
+        document.getElementById(s.options[i].value).style.display="none";
+    }
+  }
+}
+function showEstb(){
+  var s = document.getElementById("ESTB");
+    var t = s.value;
+    for(i=1;i<s.length;i++){
+      if(s.options[i].value==t){
+          document.getElementById(s.options[i].value).style.display="block";
+      }
+      else{
+        document.getElementById(s.options[i].value).style.display="none";
+    }
+  }
+}
+function showOtc(){
+  var s = document.getElementById("OTC");
+    var t = s.value;
+    for(i=1;i<s.length;i++){
+      if(s.options[i].value==t){
+          document.getElementById(s.options[i].value).style.display="block";
+      }
+      else{
+        document.getElementById(s.options[i].value).style.display="none";
+    }
+  }
+}
+    </script>
+</head>
+    <body>
+    <select id="Category" name="Category" onchange="showCat()">
+        <option value="">--select Category--</option>
+        <option  value="TS">Teaching Staff</option>
+        <option  value="ESTB">Establishment</option>
+        <option  value="OTC">Other Charges</option>
+    </select><br><br>
+    <div class="TStaffDiv" id="TS">
+        <form class="TStaffForm">
+            <select name="TStaff" onload="showTS()">
+                <option value=""></option>
+                <option value="AC">Academic Consultant</option>
+                <option value="PG">Project Guidance</option>
+                <option value="GF">Guest Faculty</option>
+            </select>
+            <div class="ACRel">
+                <label for="ACName">AC Name : </label>
+                <input type="text" name="ACName" id="ACName" placeholder="AC Name">
+                <label for="ACBillToPay">Bill Amount : </label>
+                <input type="number" name="ACBillToPay" id="ACBillToPay" placeholder="Amount to be paid">
+                <label for="ACBill">Upload Bill : </label>
+                <input type="file" name="ACBill" id="ACBill">
+            </div>
+            <div class="PGRel">
+                <label for="PGName">Project Name : </label>
+                <input type="text" name="PGName" id="PGName" placeholder="Project Name">
+                <label for="PGDesc">Project Description : </label>
+                <input type="text" name="PGDesc" id="PGDesc" placeholder="Project Description">
+                <label for="PGBillToPay">Bill Amount : </label>
+                <input type="number" name="ACBillToPay" id="ACBillToPay" placeholder="Amount to be paid">
+                <label for="PGBill">Upload Bill : </label>
+                <input type="file" name="PGBill" id="PGBill">
+            </div>
+            <div class="GFRel">
+                <label for="GFName">Guest Faculty Name : </label>
+                <input type="text" name="GFName" id="GFName" placeholder="Guest Faculty Name">
+                <label for="GFDesc">Courses Taught : </label>
+                <input type="text" name="GFDesc" id="GFDesc" placeholder="Description">
+                <label for="GFBillToPay">Bill Amount : </label>
+                <input type="number" name="GFBillToPay" id="GFBillToPay" placeholder="Amount to be paid">
+                <label for="GFBill">Upload Bill : </label>
+                <input type="file" name="GFBill" id="GFBill">
+            </div>
+        </form>
+    </div>
+    <div class="Estbdiv" id="ESTB">
+        <form class="EstbForm">
+            <select name="ESTB" onload="showEstb()">
+                <option value=""></option>
+                <option value="JA">Junior Assistant</option>
+                <option value="OFS">Office Subordinate</option>
+                <option value="LBA">Lab Assistant</option>
+            </select>
+            <div class="JARel">
+                <label for="JAName">JA Name : </label>
+                <input type="text" name="JAName" id="JAName" placeholder="Junior Assistant Name">
+                <label for="JABillToPay">Bill Amount : </label>
+                <input type="number" name="JABillToPay" id="JABillToPay" placeholder="Amount to be paid">
+                <label for="JABill">Upload Bill : </label>
+                <input type="file" name="JABill" id="JABill">
+            </div>
+            <div class="OFSRel">
+                <label for="OFSName">OFS Name : </label>
+                <input type="text" name="OFSName" id="OFSName" placeholder="Office Subordinate Name">
+                <label for="OFSBillToPay">Bill Amount : </label>
+                <input type="number" name="OFSBillToPay" id="OFSBillToPay" placeholder="Amount to be paid">
+                <label for="OFSBill">Upload Bill : </label>
+                <input type="file" name="OFSBill" id="OFSBill">
+            </div>
+            <div class="LBARel">
+                <label for="LBAName">LBA Name : </label>
+                <input type="text" name="LBAName" id="LBAName" placeholder="Lab Assistant Name">
+                <label for="LBABillToPay">Bill Amount : </label>
+                <input type="number" name="LBABillToPay" id="LBABillToPay" placeholder="Amount to be paid">
+                <label for="LBABill">Upload Bill : </label>
+                <input type="file" name="LBABill" id="LBABill">
+            </div>
+        </form>
+    </div>
+    <div class="OTCDiv" id="OTC">
+        <form class="OTCForm">
+            <select name="OTC" onload="showOtc()" >
+                <option value=""></option>
+                <option value="OTCCont">Contingency(Postage,Hospitality,Stationary)</option>
+                <option value="OTCBok">Journals and Books</option>
+                <option value="OTCLab" title="Computer and computer related">Lab & Maintenance</option>
+            </select>
+            <div class="COTrel">
+                <label for="Cont">Contingency Type : </label>
+                <select name="Cont">
+                    <option value="Postage">Postage</option>
+                    <option value="Hospitality">Hospitality</option>
+                    <option value="Stationary">Stationary</option>
+                </select>
+                <label for="COTBillToPay">Bill Amount : </label>
+                <input type="number" name="COTBillToPay" id="COTBillToPay" placeholder="Amount to be paid">
+                <label for="COTBill">Upload Bill : </label>
+                <input type="file" name="COTBill" id="COTBill">
+            </div>
+            <div class="BOKRel">
+                <label for="BokType">Book and Journal : </label>
+                <select name="BokType">
+                    <option value="Bokbok">Book</option>
+                    <option value="BokJor">Journal</option>
+                </select>
+                <label for="BokName">Book/Journal Name</label>
+                <input type="text" name="BokName" id="BokName" placeholder="Book Name">
+                <label for="BokISBN">ISBN</label>
+                <input type="text" name="BokISBN" id="BOKISBN" placeholder="Book ISBN No">
+                <label for="BokPub">Publisher</label>
+                <input type="text" name="BokPub" id="BokPub" placeholder="Book Publisher No">
+                <label for="BokBillToPay">Bill Amount : </label>
+                <input type="number" name="BokBillToPay" id="BokBillToPay" placeholder="Amount to be paid">
+                <label for="BokBill">Upload Bill : </label>
+                <input type="file" name="BokBill" id="BokBill">
+            </div>
+            <div class="LABRel">
+                <label for="LabItemNm">Lab Item : </label>
+                <select name="LabItemType">
+                    <option value="LabCs">Computer</option>
+                    <option value="LabCR">Electronics</option>
+                </select>
+                <label for="LabCsNm">Item Name : </label>
+                <input title="Computer System/Electronics Item" type="text" name="LabCsNm" type="LabCsNm" placeholder="System Name">
+                <label for="LabCsBillToPay">Bill Amount : </label>
+                <input type="number" name="LabCsBillToPay" id="LabCsBillToPay" placeholder="Amount to be paid">
+                <label for="LabCsBill">Upload Bill : </label>
+                <input type="file" name="LabCsBill" id="LabCsBill">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
